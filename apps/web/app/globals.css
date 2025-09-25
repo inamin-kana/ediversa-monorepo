@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -7,8 +7,8 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-  }
-}
+  }ß
+} */
 
 html,
 body {
@@ -17,8 +17,8 @@ body {
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  /* color: var(--foreground);
+  background: var(--background); */
 }
 
 * {
@@ -36,7 +36,7 @@ a {
   display: none;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
@@ -47,4 +47,4 @@ a {
   .imgDark {
     display: unset;
   }
-}
+} */
