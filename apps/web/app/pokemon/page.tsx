@@ -1,4 +1,5 @@
-import styles from "../page.module.css";
+import styles from "./pokemon.module.css";
+import { CardList, type ListItem } from "@repo/ui";
 
 type PokemonList = {
   results: { name: string; url: string }[]
@@ -12,31 +13,33 @@ async function getPokemons(): Promise<PokemonList> {
 
 export default async function PokemonPage() {
   const data = await getPokemons();
+
   const items = data.results.map(item => {
-    const id = item.url.split("/").filter(Boolean).pop();
+    const id = item.url.split("/").filter(Boolean).pop()!;
     return { id, name: item.name };
   });
+
+  const list: ListItem[] = items.map(({ id, name }) => ({
+    id,
+    name,
+    href: `/pokemon/${id}`,
+  }));
+
+  const spriteUrl = (id: string | number) =>
+  `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
 
   return (
     <main className={styles.mainWrap}>
       <div className={styles.pagePokemon}>
         <h1 className={styles.titleA}>Pokemon Book</h1>
 
-        <ul className={styles.cardList} aria-label="Pokémon list">
-          {items.map(({ id, name }) => (
-            <li key={id} className={styles.card__item}>
-              <a href={`/pokemon/${id}`} className={styles.card__link}>
-                <div className={styles.card__img}>
-                  <img 
-                    src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`} 
-                    alt={`Imagen de ${name}`} 
-                  />
-                </div>
-                <span className={styles.card__name}>{name}</span>
-              </a>
-            </li>
-          ))}
-        </ul>
+        <CardList
+          items={list}  
+          className={styles.cardList}
+          ariaLabel="Pokémon list"
+          getImageSrc={(it) => spriteUrl(it.id)}
+          getImageAlt={(it) => `Image of ${it.name}`}
+        />
       </div>
     </main>
   );

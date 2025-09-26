@@ -1,4 +1,6 @@
-import styles from "../../page.module.css";
+import styles from "../pokemon.module.css";
+import { ButtonBack } from "@repo/ui";
+import { DlBox, type StatItem } from "@repo/ui";
 
 type Pokemon = {
   id: number; 
@@ -15,45 +17,42 @@ type Pokemon = {
   }[];
 };
 
-export default async function PokemonDetail({ params }: { params: { id: string } }) {
-  const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${params.id}`, { cache: "no-store" });
+export default async function PokemonDetail(
+  { params }: { params: Promise<{ id: string }>  }
+) {
+  const { id } = await params;                       
+
+  const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`, { cache: "no-store" });
   if (!res.ok) return <p>ERROR: Not found</p>;
-  const p = (await res.json()) as Pokemon;
+  const pokemon = (await res.json()) as Pokemon;
+
+  const items: StatItem[] = pokemon.stats.map((s) => ({
+    name: s.stat.name,
+    value: s.base_stat,
+  }));
 
   return (
     <>
-      <a href="/pokemon" className={styles.buttonBack} aria-label="Volver a la página de Pokemon list">←  Back</a>
+      <div className={styles.buttonWrap}>
+        <ButtonBack href="/pokemon" label="Volver" />
+      </div>
 
       <main className={styles.mainWrap}>
         <div className={styles.contentsPokemon}>
-          <h1 className={styles.titleA}>{p.name}</h1>
+          <h1 className={styles.titleA}>{pokemon.name}</h1>
           <div className={styles.pokemon__img}>
-            {p.sprites.front_default && (
+            {pokemon.sprites.front_default && (
               <img 
-              src={p.sprites.front_default} 
-              alt={`Imagen de ${p.name}`} 
+              src={pokemon.sprites.front_default} 
+              alt={`Imagen de ${pokemon.name}`} 
               />
             )}
           </div>
           <div className={styles.pokemon__type}>
-            Types: 
-            {p.types.map(t => t.type.name).join(", ")}
+            <span className={styles.pokemon__typeTitle}>Types:</span> 
+            {pokemon.types.map(t => t.type.name).join(" / ")}
           </div>
-          <div className={styles.pokemon__dlWrap}>
-            <h2 className={styles.titleB}>Base stats</h2>
-            <dl className={styles.pokemon__dl}>
-              <div className={styles.pokemon__dlItem}>
-                <dt>Stat</dt>
-                <dd>Value</dd>
-              </div>
-              {p.stats.map(s => (
-                <div key={s.stat.name} className={styles.pokemon__dlItem}>
-                  <dt>{s.stat.name}</dt>
-                  <dd>{s.base_stat}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          <DlBox title="Base stats" items={items} className={styles.pokemon__dlWrap} />
         </div>
       </main>
     </>
