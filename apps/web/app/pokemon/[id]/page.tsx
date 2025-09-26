@@ -34,7 +34,7 @@ export default async function PokemonDetail(
   return (
     <>
       <div className={styles.buttonWrap}>
-        <ButtonBack href="/pokemon" label="Volver" />
+        <ButtonBack href="/pokemon" label="← Volver" />
       </div>
 
       <main className={styles.mainWrap}>

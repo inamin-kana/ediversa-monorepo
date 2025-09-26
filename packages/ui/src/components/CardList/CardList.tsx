@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import styles from "./CardList.module.css";
 
 export type ListItem = { 
@@ -8,32 +7,29 @@ export type ListItem = {
   imageSrc?: string;
 };
 
-type Props<T extends ListItem = ListItem> = {
-  items: T[];
+type Props = {
+  items: ListItem[];
   ariaLabel?: string;
   className?: string;
 
-  getImageSrc?: (item: T) => string | undefined;
-  getImageAlt?: (item: T) => string;
-  renderItem?: (item: T) => ReactNode;
-}
+  getImageSrc?: (item: ListItem) => string | undefined;
+  getImageAlt?: (item: ListItem) => string;
+};
 
 
-export function CardList<T extends ListItem>({
+export function CardList({
   items,
-  ariaLabel = "Items",
+  ariaLabel,
   className,
   getImageSrc,
   getImageAlt,
-  renderItem,
-}: Props<T>) {
+}: Props) {
   return (
-    <ul className={`${styles.cardList} ${className ?? ""}`.trim()} aria-label={ariaLabel}>
+    <ul
+      className={`${styles.cardList} ${className ?? ""}`.trim()}
+      aria-label={ariaLabel}
+    >
       {items.map((item) => {
-        if (renderItem) {
-          return <li key={item.id} className={styles.card__item}>{renderItem(item)}</li>;
-        }
-
         const img = item.imageSrc ?? getImageSrc?.(item);
         const alt = getImageAlt?.(item) ?? item.name;
 
