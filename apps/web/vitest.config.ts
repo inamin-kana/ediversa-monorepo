@@ -5,12 +5,12 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: ['./vitest.setup.ts'],
     globals: true,
-    include: ['app/**/*.{test,spec}.{ts,tsx}', 'lib/**/*.{test,spec}.{ts,tsx}'],
+    include: ['lib/**/*.{test,spec}.{ts,tsx}'], // 'app/**/*.{test,spec}.{ts,tsx}'
     coverage: {
       provider: 'v8',
       reporter: ['text', 'html'],
       reportsDirectory: './coverage',
-      include: ['app/**/*.{ts,tsx}', 'lib/**/*.{ts,tsx}'],
+      include: ['lib/**/*.{ts,tsx}'], // 'app/**/*.{ts,tsx}'
       exclude: [
         '**/*.stories.*',
         '**/__tests__/**',

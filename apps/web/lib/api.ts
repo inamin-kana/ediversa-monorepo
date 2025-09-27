@@ -1,7 +1,9 @@
 import type { PokemonList } from "../types/type";
 
-export async function getPokemons(): Promise<PokemonList> {
-  const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=150", { cache: "no-store" });
+export async function getPokemons(limit = 10, offset = 0): Promise<PokemonList> {
+  const url = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`;
+  const res = await fetch(url, { cache: 'no-store' });
+  
   if (!res.ok) throw new Error("ERROR: No se pudo hacer fetch");
   return res.json();
 }
