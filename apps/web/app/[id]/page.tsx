@@ -1,7 +1,7 @@
-import styles from "../pokemon.module.css";
+import styles from "../page.module.css";
 import { ButtonBack } from "@repo/ui";
 import { DlBox, type StatItem } from "@repo/ui";
-import type { Pokemon } from "../../../types/type";
+import type { Pokemon } from "../../types/type";
 
 export default async function PokemonDetail(
   { params }: { params: Promise<{ id: string }>  }
@@ -20,7 +20,7 @@ export default async function PokemonDetail(
   return (
     <>
       <div className={styles.buttonWrap}>
-        <ButtonBack href="/pokemon" label="← Volver" />
+        <ButtonBack href="/" label="← Volver" />
       </div>
 
       <main className={styles.mainWrap}>
