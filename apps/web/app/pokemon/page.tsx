@@ -38,7 +38,7 @@ export default async function PokemonPage() {
           className={styles.cardList}
           ariaLabel="Pokémon list"
           getImageSrc={(it) => spriteUrl(it.id)}
-          getImageAlt={(it) => `Image of ${it.name}`}
+          getImageAlt={(it) => `Imágen de ${it.name}`}
         />
       </div>
     </main>
