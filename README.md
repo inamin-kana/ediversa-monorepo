@@ -10,20 +10,20 @@ Este proyecto he desarrollado como monorepo con Turborepo.
 
 ## 🗂️ Estructura del proyecto
 
-├── apps/
-│   └── web/          # ← Aplicación principal (Next.js)
-│        └── app/             # ← Páginas de la app
-│        └── lib/             # ← Integración con la Pokemon API
-│        └── types/           # ← Types de TypeScript
-│
-├── packages/
-│   └── ui/           # ← Librería de componentes reutilizables
-│        └── src/
-│            └── components/          # ← Cada componente
-│            └── stories/             # ← Códigos para Storybook
-│
-├── package.json      # Configuración del monorepo
-└── turbo.json        # Configuración de Turborepo
+├── apps/  
+│   └── web/          # ← Aplicación principal (Next.js)  
+│        └── app/             # ← Páginas de la app  
+│        └── lib/             # ← Integración con la Pokemon API  
+│        └── types/           # ← Types de TypeScript  
+│  
+├── packages/  
+│   └── ui/           # ← Librería de componentes reutilizables  
+│        └── src/  
+│            └── components/          # ← Cada componente  
+│            └── stories/             # ← Códigos para Storybook  
+│  
+├── package.json      # Configuración del monorepo  
+└── turbo.json        # Configuración de Turborepo  
 
 
 ## 🚀 Instalación 
