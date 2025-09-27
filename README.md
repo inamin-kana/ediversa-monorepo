@@ -1,11 +1,11 @@
 # Ediversa Prueba Técnica - Frontend Developer 
 
-Este proyecto he desarrollado como monorepo con Turborepo.
-- Aplicación principal(apps/web) con Next.js + TypeScript.
-- Librería UI (packages/ui) con componentes reutilizables y estilos con CSS Modules.
-- Documentación de componentes con Storybook.
-- Testing básico con Vitest.
-- Integración con Pokémon API.
+Este proyecto he desarrollado como monorepo con **Turborepo**.
+- Aplicación principal(apps/web) con **Next.js** + **TypeScript**.
+- Librería UI (packages/ui) con componentes reutilizables y estilos con **CSS Modules**.
+- Documentación de componentes con **Storybook**.
+- Testing básico con **Vitest**.
+- Integración con **Pokémon API**.
 
 
 ## 🗂️ Estructura del proyecto
@@ -20,8 +20,8 @@ Este proyecto he desarrollado como monorepo con Turborepo.
 │       └── src/
 │           ├── components/  # ← Cada componente
 │           └── stories/     # ← Códigos para Storybook
-├── package.json      # Configuración del monorepo
-└── turbo.json        # Configuración de Turborepo
+├── package.json      # ← Configuración del monorepo
+└── turbo.json        # ← Configuración de Turborepo
 ```
 
 ## 🚀 Instalación 
