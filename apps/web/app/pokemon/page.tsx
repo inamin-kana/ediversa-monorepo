@@ -1,15 +1,6 @@
-import styles from "./pokemon.module.css";
+import { getPokemons } from "../../lib/api"; 
 import { CardList, type ListItem } from "@repo/ui";
-
-type PokemonList = {
-  results: { name: string; url: string }[]
-};
-
-async function getPokemons(): Promise<PokemonList> {
-  const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=150", { cache: "no-store" });
-  if (!res.ok) throw new Error("ERROR: No se pudo hacer fetch");
-  return res.json();
-}
+import styles from "./pokemon.module.css";
 
 export default async function PokemonPage() {
   const data = await getPokemons();

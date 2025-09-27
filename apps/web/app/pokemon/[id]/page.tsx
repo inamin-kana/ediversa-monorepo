@@ -1,21 +1,7 @@
 import styles from "../pokemon.module.css";
 import { ButtonBack } from "@repo/ui";
 import { DlBox, type StatItem } from "@repo/ui";
-
-type Pokemon = {
-  id: number; 
-  name: string;
-  sprites: { 
-    front_default: string | null 
-  };
-  types: { 
-    type: { name: string } 
-  }[];
-  stats: {
-    base_stat: number; 
-    stat: { name: string } 
-  }[];
-};
+import type { Pokemon } from "../../../types/type";
 
 export default async function PokemonDetail(
   { params }: { params: Promise<{ id: string }>  }
