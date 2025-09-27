@@ -64,7 +64,7 @@ pnpm dev
 ```
 Desde la raíz del proyecto
 ```bash
-pnpm --filter @repo/web dev
+pnpm --filter web dev
 ```
 La aplicación estará disponible en `http://localhost:3000/`
 
@@ -102,7 +102,7 @@ pnpm vitest run --project unit --coverage
 pnpm -C apps/web test     
 
 # api test + coverage
-pnpm vitest run --coverage
+pnpm --filter web coverage
 ```
 
 ### Biome
