@@ -38,7 +38,12 @@ export function CardList({
             <a href={item.href} className={styles.card__link}>
               {img && (
                 <div className={styles.card__img}>
-                  <img src={img} alt={alt} />
+                  <img 
+                    src={img} 
+                    alt={alt} 
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
               )}
               <span className={styles.card__name}>{item.name}</span>

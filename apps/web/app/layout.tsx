@@ -1,20 +1,8 @@
 import type { Metadata } from "next";
-// import localFont from "next/font/local";
-
-import styles from "./page.module.css";
-
-// const geistSans = localFont({
-//   src: "./fonts/GeistVF.woff",
-//   variable: "--font-geist-sans",
-// });
-// const geistMono = localFont({
-//   src: "./fonts/GeistMonoVF.woff",
-//   variable: "--font-geist-mono",
-// });
 
 export const metadata: Metadata = {
   title: "Pokemon List",
-  description: "This is the Pokemon API practice.",
+  description: "Es la prueba de la API de Pokémon.",
 };
 
 export default function RootLayout({
@@ -24,7 +12,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* <body className={`${geistSans.variable} ${geistMono.variable}`}> */}
       <body>
         {children}
       </body>
