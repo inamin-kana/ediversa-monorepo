@@ -51,7 +51,7 @@ pnpm --filter @repo/ui build
 
 ### Aplicación Next.js (apps/web)
 ```bash
-pnpm --filter @repo/web build
+pnpm --filter web build
 ```
 
 
