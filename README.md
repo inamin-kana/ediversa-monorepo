@@ -106,3 +106,18 @@ pnpm --filter web coverage
 ```
 
 ### Biome
+
+Verifica el código en busca de errores y problemas de estilo.
+```bash
+pnpm biome:check
+```
+
+Formatea el código según las reglas establecidas.  
+```bash
+pnpm biome:format
+```
+
+Aplica correcciones automáticas de lint y formato**.      
+```bash
+pnpm biome:fix
+```
