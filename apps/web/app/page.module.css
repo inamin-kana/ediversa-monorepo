@@ -1,77 +1,76 @@
 .mainWrap {
-  width: 100%;
-  margin: 0 auto;
-  box-sizing: border-box;
-  padding: 52px 24px;
+	width: 100%;
+	margin: 0 auto;
+	box-sizing: border-box;
+	padding: 52px 24px;
 }
-@media screen and (min-width:768px) {
-  .mainWrap {
-    padding: 80px 40px;
-  }
+@media screen and (min-width: 768px) {
+	.mainWrap {
+		padding: 80px 40px;
+	}
 }
-@media screen and (min-width:1366px) {
-  .mainWrap {
-    width: 1200px;
-  }
+@media screen and (min-width: 1366px) {
+	.mainWrap {
+		width: 1200px;
+	}
 }
 
 .titleA {
-  margin: 0;
-  text-align: center;
-  font-size: 36px;
-  font-weight: 700;
+	margin: 0;
+	text-align: center;
+	font-size: 36px;
+	font-weight: 700;
 }
 
 .titleB {
-  font-size: 20px;
+	font-size: 20px;
 }
 
 /* Page: Pokemon detail
 ============================== */
 .buttonWrap {
-  width: 160px;
-  position: relative;
-  top: 24px;
-  left: 24px;
+	width: 160px;
+	position: relative;
+	top: 24px;
+	left: 24px;
 }
-@media screen and (min-width:768px) {
-  .buttonWrap {
-    top: 40px;
-    left: 40px;
-  }
+@media screen and (min-width: 768px) {
+	.buttonWrap {
+		top: 40px;
+		left: 40px;
+	}
 }
 
 .contentsPokemon {
-  border-radius: 10px;
-  box-shadow:  5px 5px 15px #cacaca,
-              -5px -5px 15px #f6f6f6;
-  padding: 40px 24px;
-  text-align: center;
+	border-radius: 10px;
+	box-shadow:
+		5px 5px 15px #cacaca,
+		-5px -5px 15px #f6f6f6;
+	padding: 40px 24px;
+	text-align: center;
 }
 
 .pokemon__img {
-  margin: 0 auto;
-  width: 200px;
-  height: 200px;
+	margin: 0 auto;
+	width: 200px;
+	height: 200px;
 }
 
 .pokemon__img img {
-  width: 100%;
+	width: 100%;
 }
 
 .pokemon__typeTitle {
-  display: inline-block;
-  padding-right: .5em;
+	display: inline-block;
+	padding-right: 0.5em;
 }
 
 .pokemon__dlWrap {
-  width: calc(100% - 48px);
-  margin: 40px auto 0;
+	width: calc(100% - 48px);
+	margin: 40px auto 0;
 }
-@media screen and (min-width:768px) {
-  .pokemon__dlWrap {
-    width: 40%;
-  }
+@media screen and (min-width: 768px) {
+	.pokemon__dlWrap {
+		width: 40%;
+	}
 }
-
-

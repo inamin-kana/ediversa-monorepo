@@ -1,21 +1,25 @@
 {
-  "name": "ediversa-monorepo",
-  "private": true,
-  "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types": "turbo run check-types"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "2.2.4",
-    "prettier": "^3.6.2",
-    "turbo": "^2.5.8",
-    "typescript": "5.9.2"
-  },
-  "packageManager": "pnpm@9.0.0",
-  "engines": {
-    "node": ">=18"
-  }
+	"name": "ediversa-monorepo",
+	"private": true,
+	"scripts": {
+		"build": "turbo run build",
+		"dev": "turbo run dev",
+		"lint": "pnpm biome:check",
+		"format": "pnpm biome:format",
+		"fix": "pnpm biome:fix",
+		"check-types": "turbo run check-types",
+
+		"biome:check": "biome check .",
+		"biome:format": "biome format --write .",
+		"biome:fix": "biome check --write ."
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.2.4",
+		"turbo": "^2.5.8",
+		"typescript": "5.9.2"
+	},
+	"packageManager": "pnpm@9.0.0",
+	"engines": {
+		"node": ">=18"
+	}
 }

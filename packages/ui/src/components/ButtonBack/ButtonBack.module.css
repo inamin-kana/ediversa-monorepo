@@ -1,23 +1,23 @@
 .buttonBack {
-  display: block;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: auto;
-  min-width: 140px;
-  color: #222;
-  background-color: #fff5d3;
-  border-radius: 32px;
-  box-shadow:
-    -4px -4px 8px #fff,
-    4px 4px 8px rgb(48 108 181 / 24%);
-  padding: 12px;
-  transition: box-shadow 0.2s;
+	display: block;
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: auto;
+	min-width: 140px;
+	color: #222;
+	background-color: #fff5d3;
+	border-radius: 32px;
+	box-shadow:
+		-4px -4px 8px #fff,
+		4px 4px 8px rgb(48 108 181 / 24%);
+	padding: 12px;
+	transition: box-shadow 0.2s;
 }
 
 .buttonBack:hover {
-  box-shadow:
-    -2px -2px 4px #fff,
-    2px 2px 4px rgb(48 108 181 / 24%);
+	box-shadow:
+		-2px -2px 4px #fff,
+		2px 2px 4px rgb(48 108 181 / 24%);
 }

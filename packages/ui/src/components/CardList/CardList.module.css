@@ -1,61 +1,61 @@
-
 .cardList {
-  list-style: none;
-  width: 100%;
-  margin-top: 54px;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(2, calc(50% - 12px));
-  grid-template-rows: 1fr;
-  gap: 24px;
+	list-style: none;
+	width: 100%;
+	margin-top: 54px;
+	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(2, calc(50% - 12px));
+	grid-template-rows: 1fr;
+	gap: 24px;
 }
-@media screen and (min-width:768px) {
-  .cardList {
-    width: 100%;
-    grid-template-columns: repeat(4, calc(25% - 18px));
-  }
+@media screen and (min-width: 768px) {
+	.cardList {
+		width: 100%;
+		grid-template-columns: repeat(4, calc(25% - 18px));
+	}
 }
 
 .card__item {
-  border-radius: 10px;
-  box-shadow:  5px 5px 15px #cacaca,
-             -5px -5px 15px #f6f6f6;
-  overflow: hidden;
+	border-radius: 10px;
+	box-shadow:
+		5px 5px 15px #cacaca,
+		-5px -5px 15px #f6f6f6;
+	overflow: hidden;
 }
 
 .card__link {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 .card__img {
-  width: 100px;
-  height: 100px;
-  margin: auto;
-  padding: 16px;
+	width: 100px;
+	height: 100px;
+	margin: auto;
+	padding: 16px;
 }
-@media screen and (min-width:768px) {
-  .card__img {
-    width: 140px;
-    height: 140px;
-  }
+@media screen and (min-width: 768px) {
+	.card__img {
+		width: 140px;
+		height: 140px;
+	}
 }
 
 .card__img img {
-  width: 100%;
+	width: 100%;
 }
 
 .card__name {
-  display: block;
-  text-align: center;
-  color: #333;
-  background:  #eee;
-  font-size: 18px;
-  font-weight: 700;
-  padding: 24px 8px;
-  border-radius: 10px 10px 0 0;
+	display: block;
+	text-align: center;
+	color: #333;
+	background: #eee;
+	font-size: 18px;
+	font-weight: 700;
+	padding: 24px 8px;
+	border-radius: 10px 10px 0 0;
 }
-@media screen and (min-width:768px) {
-  .card__name {
-    font-size: 20px;
-  }
+@media screen and (min-width: 768px) {
+	.card__name {
+		font-size: 20px;
+	}
 }
