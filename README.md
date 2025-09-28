@@ -87,8 +87,8 @@ pnpm storybook
 Storybook estará disponible en `http://localhost:6006`
 
 ### Testing
-Desde la raíz de packages/ui  
 
+Desde la raíz de packages/ui  
 ```bash
 # Unit test de UI
 pnpm vitest run --project unit  
@@ -96,7 +96,7 @@ pnpm vitest run --project unit
 # Unit test + coverage de UI
 pnpm vitest run --project unit --coverage
 ```
-
+Desde la raíz del proyecto
 ```bash
 # api test
 pnpm -C apps/web test     
