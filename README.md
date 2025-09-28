@@ -1,30 +1,28 @@
 # Ediversa Prueba Técnica - Frontend Developer 
 
-Este proyecto he desarrollado como monorepo con Turborepo.
-- Aplicación principal(apps/web) con Next.js + TypeScript.
-- Librería UI (packages/ui) con componentes reutilizables y estilos con CSS Modules.
-- Documentación de componentes con Storybook.
-- Testing básico con Vitest.
-- Integración con Pokémon API.
+Este proyecto he desarrollado como monorepo con **Turborepo**.
+- Aplicación principal(apps/web) con **Next.js** + **TypeScript**.
+- Librería UI (packages/ui) con componentes reutilizables y estilos con **CSS Modules**.
+- Documentación de componentes con **Storybook**.
+- Testing básico con **Vitest**.
+- Integración con **Pokémon API**.
 
 
 ## 🗂️ Estructura del proyecto
-
-├── apps/  
-│   └── web/          # ← Aplicación principal (Next.js)  
-│        └── app/             # ← Páginas de la app  
-│        └── lib/             # ← Integración con la Pokemon API  
-│        └── types/           # ← Types de TypeScript  
-│  
-├── packages/  
-│   └── ui/           # ← Librería de componentes reutilizables  
-│        └── src/  
-│            └── components/          # ← Cada componente  
-│            └── stories/             # ← Códigos para Storybook  
-│  
-├── package.json      # Configuración del monorepo  
-└── turbo.json        # Configuración de Turborepo  
-
+```
+├── apps/
+│   └── web/          # ← Aplicación principal (Next.js)
+│       ├── app/      # ← Páginas de la app
+│       ├── lib/      # ← Integración con la Pokemon API
+│       └── types/    # ← Types de TypeScript
+├── packages/
+│   └── ui/           # ← Librería de componentes reutilizables
+│       └── src/
+│           ├── components/  # ← Cada componente
+│           └── stories/     # ← Códigos para Storybook
+├── package.json      # ← Configuración del monorepo
+└── turbo.json        # ← Configuración de Turborepo
+```
 
 ## 🚀 Instalación 
 
@@ -33,13 +31,13 @@ Este proyecto he desarrollado como monorepo con Turborepo.
 - [pnpm](https://pnpm.io/)
 
 1. Clone the repository
-```
+```bash
 git clone https://github.com/inamin-kana/ediversa-monorepo.git
 cd ediversa-monorepo
 ```
 
 2. Instalar dependencias (monorepo)
-```
+```bash
 pnpm install
 ```
 
@@ -47,12 +45,12 @@ pnpm install
 ## 🛠️ Compilación
 
 ### Librería UI (packages/ui)
-```
+```bash
 pnpm --filter @repo/ui build
 ```
 
 ### Aplicación Next.js (apps/web)
-```
+```bash
 pnpm --filter @repo/web build
 ```
 
@@ -61,29 +59,29 @@ pnpm --filter @repo/web build
 
 ### Web App 
 Desde la raíz de apps/web
-```
+```bash
 pnpm dev
 ```
 Desde la raíz del proyecto
-```
-pnpm --filter @repo/web dev
+```bash
+pnpm --filter web dev
 ```
 La aplicación estará disponible en `http://localhost:3000/`
 
 ### Librería de componentes
 Desde la raíz de packages/ui  
-```
+```bash
 pnpm dev
 ```
 Desde la raíz del proyecto
 
-```
+```bash
 pnpm --filter @repo/ui dev
 ```
 
 ### Storybook
 Desde la raíz del packages/ui  
-```
+```bash
 pnpm storybook
 ```
 Storybook estará disponible en `http://localhost:6006`
@@ -91,7 +89,7 @@ Storybook estará disponible en `http://localhost:6006`
 ### Testing
 Desde la raíz de packages/ui  
 
-```
+```bash
 # Unit test de UI
 pnpm vitest run --project unit  
 
@@ -99,12 +97,12 @@ pnpm vitest run --project unit
 pnpm vitest run --project unit --coverage
 ```
 
-```
+```bash
 # api test
 pnpm -C apps/web test     
 
 # api test + coverage
-pnpm vitest run --coverage
+pnpm --filter web coverage
 ```
 
 ### Biome
